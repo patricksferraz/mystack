@@ -22,7 +22,7 @@ echo "auto_activate_base: false" > $HOME/.condarc
 echo -e "${GRE}done${CLS}"
 
 echo ""
-echo -e "${GRE}Installing completion${CLS}"
+echo -e "${GRE}Installing conda completion${CLS}"
 if [ ! -e $HOME/.zshrc ]
 then
     echo "${RED}[ERROR] $HOME/.zshrc file does not exist${CLS}"
