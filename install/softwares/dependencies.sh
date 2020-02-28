@@ -7,9 +7,10 @@ echo -e "${GRE}done${CLS}"
 
 echo ""
 echo -e "${GRE}Installing Oh My Zsh${CLS}"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 sed -i 's/auth       required   pam_shells.so/auth       sufficient   pam_shells.so/g' \
     /etc/pam.d/chsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s /bin/zsh
 sed -i 's/auth       sufficient   pam_shells.so/auth       required   pam_shells.so/g' \
     /etc/pam.d/chsh
 echo -e "${GRE}done${CLS}"
