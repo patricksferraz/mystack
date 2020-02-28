@@ -20,6 +20,7 @@ helpMessage() {
    echo -e "\tbasic: only dependencies and oh-my-zsh"
    echo -e "\tconda"
    echo -e "\tdocker"
+   echo -e "\tutils"
    echo -e "\tall: install all softwares"
    exit
 }
@@ -48,10 +49,12 @@ then
             basic) sh install/softwares/./dependencies.sh ;;
             conda) install/softwares/./miniconda.sh ;;
             docker) install/softwares/./docker.sh ;;
+            utils) install/softwares/./utils.sh ;;
             all)
                 install/softwares/./dependencies.sh
                 install/softwares/./miniconda.sh
-                install/softwares/./docker.sh ;;
+                install/softwares/./docker.sh
+                install/softwares/./utils.sh ;;
         esac
     done
 fi
