@@ -34,7 +34,8 @@ git clone https://github.com/esc/conda-zsh-completion \
 sed -i 's/plugins=(git zsh_reload)/plugins=(git zsh_reload conda-zsh-completion)/g' \
     $HOME/.zshrc
 
-if [ ! $(egrep "autoload -U compinit && compinit" $HOME/.zshrc) ]
+egrep "autoload -U compinit && compinit" $HOME/.zshrc
+if [ $? -ne 0 ]
 then
     echo "autoload -U compinit && compinit" >> $HOME/.zshrc
 fi
