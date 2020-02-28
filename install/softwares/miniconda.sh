@@ -3,10 +3,10 @@
 echo ""
 echo -e "${GRE}Downloading miniconda${CLS}"
 curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    --output miniconda.sh
-chmod +x miniconda.sh
+    --output conda.sh
+chmod +x conda.sh
 
-if [ ! -x miniconda.sh ]
+if [ ! -x conda.sh ]
 then
     echo -e "${RED}[ERROR] Miniconda download error${CLS}"
     exit
@@ -15,8 +15,8 @@ echo -e "${GRE}done${CLS}"
 
 echo ""
 echo -e "${GRE}Installing miniconda${CLS}"
-./miniconda.sh -u -b -p /opt/miniconda && chown $USER:$USER /opt/miniconda
-rm -rf miniconda.sh
+./conda.sh -u -b -p /opt/miniconda && chown $USER:$USER /opt/miniconda
+rm -rf conda.sh
 eval "$(/opt/miniconda/bin/conda shell.zsh hook)" && conda init zsh
 echo "auto_activate_base: false" > $HOME/.condarc
 echo -e "${GRE}done${CLS}"
