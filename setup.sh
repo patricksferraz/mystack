@@ -34,7 +34,7 @@ do
             exit ;;
         i)
             DO_INSTALL=1
-            softs+=$OPTARG ;;
+            softs+=($OPTARG) ;;
         ?) helpMessage ;;
     esac
 done
